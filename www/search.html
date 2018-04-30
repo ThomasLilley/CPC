@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Last Call - Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--SOME APPLE SEETINGS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/custom.css"/>
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+    <script>
+        $(function() {
+            $( "[data-role='navbar']" ).navbar();
+            $( "[data-role='header'], [data-role='footer']" ).toolbar();
+        });
+        // Update the contents of the toolbars
+        $( document ).on( "pagecontainerchange", function() {
+            // Each of the four pages in this demo has a data-title attribute
+            // which value is equal to the text of the nav button
+            // For example, on first page: <div data-role="page" data-title="Info">
+            var current = $( ".ui-page-active" ).jqmData( "title" );
+            // Change the heading
+            $( "[data-role='header'] h1" ).text( current );
+            // Remove active class from nav buttons
+            $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+            // Add active class to current nav button
+            $( "[data-role='navbar'] a" ).each(function() {
+                if ( $( this ).text() === current ) {
+                    $( this ).addClass( "ui-btn-active" );
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div data-role="page" id="search" data-theme="a">
+    <div data-role="header" id="header">
+        <h2>Search</h2>
+    </div>
+    <div data-role="content">
+        <p> Welcome! </p>
+    </div>
+    <!-- FOOTER TOOLBAR -->
+    <div data-role="footer" data-id="foo1" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup ui-fixed-hidden" role="contentinfo">
+        <div data-role="navbar">
+            <ul>
+                <li class="ui-block-a"><a href="index.html" data-prefetch="true" data-icon="home" >Summary</a></li>
+                <li class="ui-block-b"><a href="search.html" data-prefetch="true" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
+                <li class="ui-block-c"><a href="favs.html" data-prefetch="true" data-icon="star">Favourites</a></li>
+                <li class="ui-block-d"><a href="nearby.html" data-prefetch="true" data-icon="location">Near Me</a></li>
+                <li class="ui-block-e"><a href="profile.html" data-prefetch="true" data-icon="user">Profile</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div>
+
+<!-- scripts -->
+
+<script src="js/jquery.min.js"></script>
+
+<!--note jqm defaults defines preferences for JQM so needs to be declared before the library-->
+<script src="js/jqm_defaults.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+<!--our js file goes last so we know all dependencies are loaded first-->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
