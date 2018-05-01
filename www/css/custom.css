@@ -1,4 +1,40 @@
 
+#subheading{
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+}
+
 #header{
-	font-family: Satisfy;
+	font-family: Satisfy, sans-serif;
+}
+
+#map {
+	height: 600px;
+	width: 100%;
+}
+
+#foo1{
+	z-index: 10;
+}
+
+.homecontent{
+	height:200px;
+	width:100%;
+	background-color:#aaaaaa;
+	margin-bottom: 15px;
+}
+
+#favouter{
+	height:200px;
+	width:100%;
+	background-color:#FFFFFF;
+	margin-bottom: 15px;
+}
+
+#favinner {
+	height: 180px;
+	width: 180px;
+	background-color: #aaaaaa;
+	margin-top: 10px;
+	margin-left: 10px;
 }
