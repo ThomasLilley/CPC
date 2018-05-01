@@ -13,32 +13,6 @@
     <link rel="stylesheet" href="css/custom.css"/>
 
     <script type="text/javascript" src="cordova.js"></script>
-
-
-    <script>
-        $(function() {
-            $( "[data-role='navbar']" ).navbar();
-            $( "[data-role='header'], [data-role='footer']" ).toolbar();
-        });
-        // Update the contents of the toolbars
-        $( document ).on( "pagecontainerchange", function() {
-            // Each of the four pages in this demo has a data-title attribute
-            // which value is equal to the text of the nav button
-            // For example, on first page: <div data-role="page" data-title="Info">
-            var current = $( ".ui-page-active" ).jqmData( "title" );
-            // Change the heading
-            $( "[data-role='header'] h1" ).text( current );
-            // Remove active class from nav buttons
-            $( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
-            // Add active class to current nav button
-            $( "[data-role='navbar'] a" ).each(function() {
-                if ( $( this ).text() === current ) {
-                    $( this ).addClass( "ui-btn-active" );
-                }
-            });
-        });
-    </script>
-
 </head>
 <body>
 <div data-role="page" id="search" data-theme="a">
@@ -49,9 +23,9 @@
         <p> Welcome! </p>
     </div>
     <!-- FOOTER TOOLBAR -->
-    <div data-role="footer" data-id="foo1" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed slideup ui-fixed-hidden" role="contentinfo">
-        <div data-role="navbar">
-            <ul>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar" data-position="fixed" >
+            <ul class="ui-grid-d">
                 <li class="ui-block-a"><a href="index.html" data-prefetch="true" data-icon="home" >Summary</a></li>
                 <li class="ui-block-b"><a href="search.html" data-prefetch="true" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
                 <li class="ui-block-c"><a href="favs.html" data-prefetch="true" data-icon="star">Favourites</a></li>
