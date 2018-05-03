@@ -1,13 +1,17 @@
 "use strict";
 
-var audioElement;
-
+document.addEventListener("deviceready", onDeviceReady, false);
 // add device and doc ready
 
 function onDeviceReady() {
 	console.log("device ready");
+
+    document.getElementById("cameraTakeProfPicture").addEventListener
+    ("click", cameraTakeProfPicture);
+
 	init();
 }
+
 
 $(document).ready(function () {
 	console.log("document ready");
@@ -15,27 +19,27 @@ $(document).ready(function () {
 });
 
 
+function cameraTakeProfPicture() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 50,
+		targetWidth: 360,
+		targetHeight: 480,
+        destinationType: Camera.DestinationType.DATA_URL
+    });
+
+    function onSuccess(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+}
 
 function init() {
 	document.addEventListener("online", onOnline, false);
 	document.addEventListener("offline", onOffline, false);
-
-	document.getElementById('btn1').addEventListener('click',accessCamera);
-	function accessCamera {
-        navigator.camera.getPicture(success, error, {
-            quality: 50,
-            destinationType:Camera.DestinationType.DATA_URL
-        });
-    }
-    function success(imageData) {
-		var img = document.getElementById('profilepic');
-		img.src = "data:image/jpeg;base64,"+imageData;
-		}
-
-	function error(errror){
-		console.log("Error" + error);
-	}
-
 
 	if (window.navigator.onLine) {
 		$('body').addClass('online');
@@ -61,7 +65,6 @@ function onOnline() {
 	
 }
 
-
 $(document).on("pagebeforeshow", function () {
 	// When entering pagetwo
 	//alert("page is about to be shown");
@@ -81,120 +84,3 @@ $(document).on('pagecreate', '#menu', function () {
 	console.log("pagecreate menu");
 
 });
-
-
-
-
-
-
-	function create_pie_chart() {
-		console.log("donut");
-		
-		// adds the chart to a container div in our html with an ID donut
-		// you can look up high charts docs but you do not need to understand below
-		$('#donut').highcharts({
-			chart: {
-				plotBackgroundColor: null,
-				plotBorderWidth: null,
-				plotShadow: false,
-				type: 'pie'
-			},
-			title: {
-				text: 'My Events'
-			},
-			tooltip: {
-				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-			},
-			legend: {
-				padding: 3,
-				itemMarginTop: 5,
-				itemMarginBottom: 5,
-				itemStyle: {
-					lineHeight: '14px',
-					color: 'white',
-					fontSize: '10px'
-				}
-			},
-			plotOptions: {
-				pie: {
-					allowPointSelect: true,
-					cursor: 'pointer',
-					dataLabels: {
-						enabled: false
-					},
-					showInLegend: true
-				}
-			},
-			series: [{
-				name: 'Events',
-				colorByPoint: true,
-				data: [{
-					name: 'Football',
-					y: 56.33
-				}, {
-					name: 'Judo',
-					y: 24.03,
-					sliced: true,
-					selected: true
-				}, {
-					name: 'Dodge Ball',
-					y: 10.38
-				}, {
-					name: 'Swimming',
-					y: 4.77
-				}, {
-					name: 'Cricket',
-					y: 0.91
-				}],
-				size: '90%',
-				innerSize: '50%'
-			}]
-		});
-	} //piechart
-
-	function create_line_chart() {
-		console.log("add line");
-		// adds the chart to a container div in our html with an ID line
-		// you can look up high charts docs but you do not need to understand below
-		$('#line').highcharts({
-			title: {
-				text: 'Monthly Activity Visits',
-				x: 0 //center
-			},
-			xAxis: {
-				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-					'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-				]
-			},
-			yAxis: {
-				title: {
-					text: 'Visits)'
-				},
-				plotLines: [{
-					value: 0,
-					width: 1,
-					color: '#808080'
-				}]
-			},
-			tooltip: {
-				valueSuffix: ''
-			},
-			series: [{
-				name: 'Football',
-				data: [1, 2, 3, 4, 4, 4, 4, 4, 2, 2, 1, 1]
-			}, {
-				name: 'Judo',
-				data: [2, 3, 4, 4, 4, 4, 4, 2, 2, 1, 1, 1]
-			}, {
-				name: 'Dodge Ball',
-				data: [4, 4, 4, 4, 4, 2, 2, 1, 1, 2, 2, 2]
-			}, {
-				name: 'Swimming',
-				data: [4, 4, 4, 2, 2, 1, 1, 3, 3, 3, 2, 1]
-			}]
-		});
-
-	} //linechart
-
-
-
