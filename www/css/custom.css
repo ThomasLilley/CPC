@@ -17,10 +17,20 @@
 	z-index: 10;
 }
 
+.homesubhd{
+	color: black;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.homeimg{
+	padding-left: 5px;
+}
+
 .homecontent{
-	height:200px;
+	height:250px;
 	width:100%;
-	background-color:#aaaaaa;
+	background-color:#e6e6e6;
 	margin-bottom: 15px;
 }
 
@@ -37,4 +47,11 @@
 	background-color: #aaaaaa;
 	margin-top: 10px;
 	margin-left: 10px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }

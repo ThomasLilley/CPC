@@ -19,7 +19,24 @@ $(document).ready(function () {
 function init() {
 	document.addEventListener("online", onOnline, false);
 	document.addEventListener("offline", onOffline, false);
-	
+
+	document.getElementById('btn1').addEventListener('click',accessCamera);
+	function accessCamera {
+        navigator.camera.getPicture(success, error, {
+            quality: 50,
+            destinationType:Camera.DestinationType.DATA_URL
+        });
+    }
+    function success(imageData) {
+		var img = document.getElementById('profilepic');
+		img.src = "data:image/jpeg;base64,"+imageData;
+		}
+
+	function error(errror){
+		console.log("Error" + error);
+	}
+
+
 	if (window.navigator.onLine) {
 		$('body').addClass('online');
 		

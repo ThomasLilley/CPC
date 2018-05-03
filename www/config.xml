@@ -68,6 +68,7 @@
 	<plugin name="cordova-plugin-device-orientation" />
 	<plugin name="cordova-plugin-network-information" />
 	<plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-camera"/>
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins
 	THE BELOW IS AN EXAMPLE OF EXTRA SETTINGS FOR IOS1O SECURITY -->
@@ -76,7 +77,6 @@
 	</plugin>
 -->
     <!-- Third party plugins -->
- 
 
 	<!--//these are generic not good enough for a live build - you will need to be os and device specific (android can use 9 slice png)-->
 	<icon src="icon.png" />
