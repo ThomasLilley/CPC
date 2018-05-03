@@ -29,7 +29,9 @@ function cameraTakeProfPicture() {
 
     function onSuccess(imageData) {
         var image = document.getElementById('myImage');
+		console.log("photo success");
         image.src = "data:image/jpeg;base64," + imageData;
+
     }
 
     function onFail(message) {
