@@ -25,15 +25,26 @@
     </div>
     <div data-role="content">
         <p id="subheading" style="text-align: center; width: 100%;">Your Recent Places</p>
-        <div class ="homecontent"><p class="homesubhd">The Swan</p><a href="swan.html"><img class="homeimg" src="css/images/swan.jpg" height="80%"/></a></div>
-        <div class ="homecontent"><p class="homesubhd">The Square Sail</p> <img class="homeimg" src="css/images/squaresail.jpg" height="80%"/></div>
-        <div class ="homecontent"><p class="homesubhd">Royal William iv</p> <img class="homeimg" src="css/images/royalwill.jpg" height="80%"/></div>
-        <div class ="homecontent"><p class="homesubhd">Horse and Groom</p> <img class="homeimg" src="css/images/horsegroom.jpg" height="80%"/></div>
-        <div class ="homecontent"><p class="homesubhd">The Joiners Arms</p> <img class="homeimg" src="css/images/joiners.jpg" height="80%"/></div>
+        <div class ="homecontent"><p class="homesubhd">The Swan</p><a href="swan.html"><img class="homeimg" src="css/images/swan.jpg" height="200px;"/></a>
+            <p>Favourite? <img class="with-action" id="image1" name="image1" src="css/images/starN.png" onclick='toogle(this,["css/images/starY.png"] );'/></p></div>
+
+        <div class ="homecontent"><p class="homesubhd">The Square Sail</p> <img class="homeimg" src="css/images/squaresail.jpg" height="200px;"/>
+            <p>Favourite? <img class="with-action" id="image2" name="image2" src="css/images/starN.png" onclick='toogle(this,["css/images/starY.png"] );'/></p></div>
+
+        <div class ="homecontent"><p class="homesubhd">Royal William iv</p> <img class="homeimg" src="css/images/royalwill.jpg" height="200px;"/>
+            <p>Favourite? <img class="with-action" id="image3" name="image3" src="css/images/starN.png" onclick='toogle(this,["css/images/starY.png"] );'/></p></div>
+
+        <div class ="homecontent"><p class="homesubhd">Horse and Groom</p> <img class="homeimg" src="css/images/horsegroom.jpg" height="200px;"/>
+            <p>Favourite? <img class="with-action" id="image4" name="image4" src="css/images/starN.png" onclick='toogle(this,["css/images/starY.png"] );'/></p></div>
+
+        <div class ="homecontent"><p class="homesubhd">The Joiners Arms</p> <img class="homeimg" src="css/images/joiners.jpg" height="200px;"/>
+            <p>Favourite? <img class="with-action" id="image5" name="image5" src="css/images/starN.png" onclick='toogle(this,["css/images/starY.png"] );'/></p></div>
     </div>
+
+
     <!-- FOOTER TOOLBAR -->
-    <div data-role="footer" data-id="foo1" data-position="fixed">
-        <div data-role="navbar" data-position="fixed" >
+    <div data-role="footer" data-id="foo1" data-position="fixed" data-tap-toggle="false">
+        <div data-role="navbar" data-position="fixed" data-tap-toggle="false">
             <ul>
                 <li class="ui-block-a"><a href="index.html" data-prefetch="true" data-icon="home" class="ui-btn-active ui-state-persist">Summary</a></li>
                 <li class="ui-block-b"><a href="favs.html" data-prefetch="true" data-icon="star">Favourites</a></li>

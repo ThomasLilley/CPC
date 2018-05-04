@@ -4,9 +4,15 @@
 	font-weight: bold;
 }
 
-#header{
-	font-family: Satisfy, sans-serif;
+@font-face {
+	font-family: "CustomSatisfy";
+	src: url("fonts/Satisfy-Regular/Satisfy-Regular.ttf");
 }
+
+h2{
+	font-family: "CustomSatisfy", Satisfy, Serif;
+}
+
 
 #map {
 	height: 600px;
@@ -28,10 +34,11 @@
 }
 
 .homecontent{
-	height:250px;
+	height:100%;
 	width:100%;
 	background-color:#e6e6e6;
 	margin-bottom: 15px;
+	padding: 10px;
 }
 
 #favouter{

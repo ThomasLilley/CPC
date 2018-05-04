@@ -150,6 +150,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="http://www.powr.io/*"/>
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
