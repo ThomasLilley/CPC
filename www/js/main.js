@@ -9,8 +9,6 @@ function onDeviceReady() {
     document.getElementById("cameraTakeProfPicture").addEventListener
     ("click", cameraTakeProfPicture);
 
-    document.getElementById("star1")
-
 	init();
 }
 
@@ -89,7 +87,18 @@ $(document).on('pagecreate', '#menu', function () {
 
 });
 
+function favHide() {
+    var x = document.getElementById("swan");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
 var gStorage = {};
+
 
 function toogle(anImage, anAltSrcArr) {
     if (typeof(anImage) === "undefined" || typeof(anAltSrcArr) === "undefined" || anAltSrcArr.length === 0) {
